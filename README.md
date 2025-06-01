@@ -1,0 +1,1 @@
+Samodzielny projekt zaliczeniowy, aplikacja webowa Django, polegająca na "scrapowaniu" przy wykorzystaniu Selenium, stron sklepów w celu pobrania cen produktu ich monitorowania i wysyłki wiadomości na maila jeśli cena spadła poniżej oczekiwanej
