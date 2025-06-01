@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2 class="section-title">Lista produktów</h2>
+    <div class="button-container">
+        <a href="{% url 'dodaj_produkt' %}" class="button">Dodaj nowy produkt</a>
+        <a href="{% url 'uruchom_scraper_selenium' %}" class="button">Uruchom skrypt</a>
+    </div>
+    <ul class="product-list">
+        {% for produkt in produkty %}
+            <li class="product-item">
+                <a href="{% url 'produkt_szczegoly' produkt.id %}" class="product-link">{{ produkt.nazwa }}</a>
+                <span class="product-info">Aktualna cena: {{ produkt.aktualna_cena|default:"Brak danych" }} zł</span>
+                <span class="product-info">Cena docelowa: {{ produkt.cena_docelowa }} zł</span>
+            </li>
+        {% empty %}
+            <p class="no-data">Brak produktów w bazie danych.</p>
+        {% endfor %}
+    </ul>
+{% endblock %}

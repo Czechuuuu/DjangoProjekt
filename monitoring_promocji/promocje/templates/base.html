@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoring Promocji</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header class="header">
+        <a href="/" class="header-link">
+            <h1 class="title">Monitoring Promocji</h1>
+            <h2 class="subtitle">Amazon, mediaexpert</h2>
+        </a>
+    </header>
+    <main class="content">
+        {% block content %}{% endblock %}
+    </main>
+    <footer class="footer">
+        <p>&copy; 2025 Monitoring Promocji</p>
+    </footer>
+</body>
+</html>

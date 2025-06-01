@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2 class="section-title">Szczegóły produktu: {{ produkt.nazwa }}</h2>
+    <div class="product-details">
+        <p><strong>URL produktu:</strong> <a href="{{ produkt.url }}" target="_blank" class="external-link">{{ produkt.url }}</a></p>
+        <p><strong>Aktualna cena:</strong> {{ produkt.aktualna_cena }} zł</p>
+        <p><strong>Cena docelowa:</strong> {{ produkt.cena_docelowa }} zł</p>
+        <p><strong>Adres e-mail:</strong> {{ produkt.email_odbiorcy }}</p>
+        <p><strong>Ostatnia aktualizacja:</strong> {{ produkt.ostatnia_aktualizacja }}</p>
+    </div>
+    <h3 class="section-subtitle">Historia cen</h3>
+    <table class="price-history">
+        <thead>
+            <tr>
+                <th>Data sprawdzenia</th>
+                <th>Cena</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for historia in historia_cen %}
+                <tr>
+                    <td>{{ historia.data_sprawdzenia }}</td>
+                    <td>{{ historia.cena }} zł</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="2">Brak historii cen dla tego produktu.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
